@@ -1,0 +1,13 @@
+Package: impedanceR
+Title: Functions for simulating impedance spectra
+Version: 0.0.1
+Authors@R: person("Matthew", "Lacey", email = "matt@lacey.se", role = c("aut", "cre"))
+Description: A set of functions for calculating and simulating impedance spectra of simple circuit elements and complex equivalent circuits.
+Depends: R (>= 3.4.2)
+License: CC BY-NC-SA
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+Imports:
+	magrittr,
+	pracma
