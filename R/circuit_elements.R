@@ -182,17 +182,16 @@ Z_FLG <- function(Z0, k, tau, omega) {
 
 trans_line <- function(R, U, n) {
   require(magrittr)
-  if(n >= 25) stop("Values for n higher than 25 cannot be calculated.")
+  if(n >= 50) stop("Values for n of 50 or higher cannot be calculated.")
   s <- lapply(1:n, function(n) {
-    "ser(Z_R(R), par(U," # open 3, close 1 (every loop, open 2)
+    "Z_R(R) + par(U," # open 2, close 1 (every loop, open 1)
   }) %>%
     do.call(paste, .) %>%
-    paste("ser(Z_R(R), U") %>% # open 2, close 1
+    paste("Z_R(R) + U") %>% # open 1, close 1
     paste(., lapply(1:n, function(n) {
-      "))"
+      ")"
     }) %>%
-      do.call("paste", .)) %>%
-    paste(., ")")
+      do.call("paste", .))
   
   spec <- eval(parse(text = s)) %>% as.complex
   return(spec)
