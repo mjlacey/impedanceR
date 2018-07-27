@@ -184,7 +184,7 @@ trans_line <- function(R, U, n) {
   require(magrittr)
   if(n >= 50) stop("Values for n of 50 or higher cannot be calculated.")
   s <- lapply(1:n, function(n) {
-    "Z_R(R) + par(U," # open 2, close 1 (every loop, open 1)
+    "Z_R(R) + para(U," # open 2, close 1 (every loop, open 1)
   }) %>%
     do.call(paste, .) %>%
     paste("Z_R(R) + U") %>% # open 1, close 1
