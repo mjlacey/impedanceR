@@ -75,6 +75,16 @@ R2 = Z_R(25)
 R1 + para(C1, R2)
 ```
 
+For circuits with multiple frequency-dependent elements, the `omega` argument in each element must be identical - currently the functions do not check for this. This is best handled by creating a separate variable with the desired range of values:
+
+```{r}
+omega = omega_range(low.logf = -1, high.logf = 5, p.per.dec = 10)
+C1 = Z_C(1E-5, omega)
+C2 = Z_C(1E-6, omega)
+
+para(R1, C1) + para(R2, C2)
+```
+
 Results can easily be converted into data frames and plotted:
 
 ```{r}
