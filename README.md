@@ -38,6 +38,12 @@ See the R documentation (i.e., `?functionname`) for more information on usage
 
 `Z_to_df()` - convert a complex vector to a `data.frame` of real and imaginary values
 
+## Installation
+
+```{r}
+devtools::install_github("mjlacey/impedanceR")
+```
+
 ## Example usage
 
 Construction of equivalent circuits is aimed to be as simple as possible. For example; a simple series RC circuit can be simulated as follows:
